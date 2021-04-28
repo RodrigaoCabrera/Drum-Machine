@@ -7,10 +7,9 @@ import audio6 from './audio6.mp3';
 import audio7 from './audio7.mp3';
 import audio8 from './audio8.mp3';
 import audio9 from './audio9.mp3';
-import { useState } from 'react';
+import React,{ useState } from 'react';
 import Buttons from './Buttons'
-import './style.css';
-import './style2.css';
+import './style.css'
 
 export default function DrumMachine(){
    const [name, setName] = useState('');
@@ -33,37 +32,60 @@ export default function DrumMachine(){
     }
     
     return(
-        <div id="drum-machine">
-            <div className='drum-button' >
-            <Buttons interruptor={interruptor} sonido={audio} name={'Q'} onName={handleName} volumen={volumen}/>
-                <Buttons interruptor={interruptor} sonido={audio2} name={'W'}onName={handleName} volumen={volumen}/> 
-                <Buttons interruptor={interruptor} sonido={audio3} name={'E'}onName={handleName} volumen={volumen}/>  
-                <Buttons interruptor={interruptor} sonido={audio4} name={'A'}onName={handleName} volumen={volumen}/>
-                <Buttons interruptor={interruptor} sonido={audio5} name={'S'}onName={handleName} volumen={volumen}/> 
-                <Buttons interruptor={interruptor} sonido={audio6} name={'D'}onName={handleName} volumen={volumen}/> 
-                <Buttons interruptor={interruptor} sonido={audio7} name={'Z'}onName={handleName} volumen={volumen}/>
-                <Buttons interruptor={interruptor} sonido={audio8} name={'X'}onName={handleName} volumen={volumen}/> 
-                <Buttons interruptor={interruptor} sonido={audio9} name={'C'}onName={handleName} volumen={volumen}/>
-            </div>
-            <div className='caja2' >
-                <div className={/*Condición ternaria para cambiar className y darle
-                diferentes estilos.*/
-                    interruptor ? 'Power' : 'Power2'} onClick={()=>setInterruptor(!interruptor)}>
-                    <div className={interruptor ? 'interruptor' : 'interruptorOff'}><p>{interruptor ? 'On' : 'Off'}</p></div>
+        <div id="drum-machine" className='d-flex'>
+            <div className='row h-75 border d-flex justify-content-center justify-self-center align-self-center'>
+                <div className='drum-button col-12 col-md-6 p-0 m-0' >
+                    <div className='container h-100 p-0'>
+                        <div className='row h-100 w-100 m-0 p-2'>
+                            <div className="col-4 p-0 " >
+                                <Buttons interruptor={interruptor} sonido={audio} name={'Q'} onName={handleName} volumen={volumen}/>
+                            </div>
+                            <div className="col-4 p-0">
+                                <Buttons interruptor={interruptor} sonido={audio2} name={'W'}onName={handleName} volumen={volumen}/> 
+                            </div>
+                            <div className="col-4 p-0">
+                                <Buttons interruptor={interruptor} sonido={audio3} name={'E'}onName={handleName} volumen={volumen}/>  
+                            </div>
+                            <div className="col-4 p-0">
+                                <Buttons interruptor={interruptor} sonido={audio4} name={'A'}onName={handleName} volumen={volumen}/>
+                            </div>
+                            <div className="col-4 p-0">
+                                <Buttons interruptor={interruptor} sonido={audio5} name={'S'}onName={handleName} volumen={volumen}/> 
+                            </div>
+                            <div className="col-4 p-0">
+                                <Buttons interruptor={interruptor} sonido={audio6} name={'D'}onName={handleName} volumen={volumen}/> 
+                            </div>
+                            <div className="col-4 p-0">
+                                <Buttons interruptor={interruptor} sonido={audio7} name={'Z'}onName={handleName} volumen={volumen}/>
+                            </div>
+                            <div className="col-4 p-0">
+                                <Buttons interruptor={interruptor} sonido={audio8} name={'X'}onName={handleName} volumen={volumen}/> 
+                            </div>
+                            <div className="col-4 m-0 p-0">
+                                <Buttons interruptor={interruptor} sonido={audio9} name={'C'}onName={handleName} volumen={volumen}/>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
-                
-                <div id="display" >
-                    <p>{/*Condición ternaria que decide si se muestra name o volumen.*/
-                    nameVolumen === name ? name : `Volumen ${volumen}`}</p>
-                </div> 
-                <div className={/*Condición ternaria para cambiar className y darle
-                diferentes estilos.*/
-                    bank ? 'Bank' : 'Bank2'} onClick={()=>setBank(!bank)}>
-                    <div className={bank ? 'bank' : 'bankOff'}><p>Bank</p></div>
-                </div>  
-                <div className='volumen'>
-                    <label for="volumen"></label> <br/>
-                        <input type="range" min="0" max="1" step="0.1" value={volumen} onChange={handleVolumen}></input>
+
+                <div className='col-12 col-md-6 d-flex flex-column align-self-center' >
+                    <div className={`my-3 text-center border ${interruptor ? 'Power' : 'Power2'}`} onClick={()=>setInterruptor(!interruptor)} >
+                        <div className={interruptor ? 'interruptor' : 'interruptorOff'}><p>{interruptor ? 'ON' : 'OFF'}</p></div>
+                    </div>
+                    
+                    <div id="display" className='bg-dark align-self-center rounded text-center text-white font-weight-bold'>
+                        {/*Condición ternaria que decide si se muestra name o volumen.*/
+                        nameVolumen === name ? name : `Volumen ${volumen}`}
+                    </div> 
+
+                    <div className={`my-3 text-center border ${bank ? 'Bank' : 'Bank2'}`} onClick={()=>setBank(!bank)}>
+                        <div className={bank ? 'bank' : 'bankOff'}><p>BANK</p></div>
+                    </div>  
+                    <div className='volumen'>
+                        <label for="volumen"></label> <br/>
+                            <input type="range" min="0" max="1" step="0.1" value={volumen} onChange={handleVolumen}></input>
+                    </div>
                 </div>
             </div>   
         </div>

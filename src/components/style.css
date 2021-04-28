@@ -1,100 +1,47 @@
-.App{
-    background-color:#00ccbb;
-    display:flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-}
-#drum-machine{
-    display: grid;
-    background-color:grey;
-    grid-template-rows: auto;
-    grid-template-columns: auto auto;
-    width: 65vw;
-    height: 20em;
-    
-    border: 0.2em solid black;
-    
-}
-.drum-button{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-    background-color:green;
-    grid-gap: 0.3em;
-    
-}
-
-.drum-pad{
-   box-shadow: 5px 5px 10px black;
-   height: 100%;
-   width:100%;
-   border-radius: 2.5%;
-   font-family: Georgia, 'Times New Roman', Times, serif;
-   font-size: 2.5rem;
-   border: none;
-}
-
-.drum-pad:active{
-    background: orange;
-    box-shadow: none;
-    
-}
-.caja2{
-    background-color: grey;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 1em;
-}
 
 #display{
-    background-color:#00ccbb;
-    display: flex;
-    align-self: center;
+    height:40px;
     width: 60%;
-    flex-basis: 2em;
-    box-shadow: 1rem 1rem 2rem black;
-    border-radius: 2em;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2rem;
+    padding-top:6px;
+   
     
 }
 
 .Power, .Bank{
     margin: auto;
     background-color: black;
-    display: grid;
-    height: 3rem;
-    width: 7rem;
-    box-shadow: 1rem 1rem 2rem white;
-    border-radius: 10px;
+    display: flex;
+    height: 1.7rem;
+    width: 5rem;
+    box-shadow: .3rem 0.3em 1rem white;
+    border-radius: 4em;
     
 }
+
 .Power2, .Bank2{
     margin: auto;
     background-color: black;
-    display: grid;
-    height: 3rem;
-    width: 7rem;
-    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    height: 1.7rem;
+    width: 5rem;
+    border-radius: 4em;
 }
 
 .interruptor, .bank{
-    background-color: rgb(14, 218, 14);
-    width: 50%;
-    border-radius: 10px;
-    display:flex;
-    justify-content: center;
-    
+    background-color: green;
+    height: 1.7rem;
+    width: 52%;
+    border-radius: 4em;
+    padding-top:1.9px;
 }
+
 .interruptorOff, .bankOff{
     background-color: red;
-    width: 50%;
-    justify-self: end;
-    border-radius: 10px;
-    
+    height: 1.7rem;
+    width: 52%;
+    border-radius: 4em;
+
 }
 p{
     margin: auto;
@@ -103,4 +50,8 @@ p{
 }
 .volumen{
     align-self: center;
+}
+
+.row{
+    background-color:#000;
 }
