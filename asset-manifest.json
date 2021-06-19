@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Drum-Machine/static/css/main.1fdb862a.chunk.css",
-    "main.js": "/Drum-Machine/static/js/main.a1e60e5c.chunk.js",
-    "main.js.map": "/Drum-Machine/static/js/main.a1e60e5c.chunk.js.map",
+    "main.js": "/Drum-Machine/static/js/main.7193943d.chunk.js",
+    "main.js.map": "/Drum-Machine/static/js/main.7193943d.chunk.js.map",
     "runtime-main.js": "/Drum-Machine/static/js/runtime-main.f59d0656.js",
     "runtime-main.js.map": "/Drum-Machine/static/js/runtime-main.f59d0656.js.map",
     "static/css/2.658248ec.chunk.css": "/Drum-Machine/static/css/2.658248ec.chunk.css",
@@ -11,13 +11,22 @@
     "index.html": "/Drum-Machine/index.html",
     "static/css/2.658248ec.chunk.css.map": "/Drum-Machine/static/css/2.658248ec.chunk.css.map",
     "static/css/main.1fdb862a.chunk.css.map": "/Drum-Machine/static/css/main.1fdb862a.chunk.css.map",
-    "static/js/2.f34f5d36.chunk.js.LICENSE.txt": "/Drum-Machine/static/js/2.f34f5d36.chunk.js.LICENSE.txt"
+    "static/js/2.f34f5d36.chunk.js.LICENSE.txt": "/Drum-Machine/static/js/2.f34f5d36.chunk.js.LICENSE.txt",
+    "static/media/audio.5762963a.mp3": "/Drum-Machine/static/media/audio.5762963a.mp3",
+    "static/media/audio2.215dea3f.mp3": "/Drum-Machine/static/media/audio2.215dea3f.mp3",
+    "static/media/audio3.e6256b86.mp3": "/Drum-Machine/static/media/audio3.e6256b86.mp3",
+    "static/media/audio4.2b6419fc.mp3": "/Drum-Machine/static/media/audio4.2b6419fc.mp3",
+    "static/media/audio5.7d857d23.mp3": "/Drum-Machine/static/media/audio5.7d857d23.mp3",
+    "static/media/audio6.1090bcf6.mp3": "/Drum-Machine/static/media/audio6.1090bcf6.mp3",
+    "static/media/audio7.2ed22cf9.mp3": "/Drum-Machine/static/media/audio7.2ed22cf9.mp3",
+    "static/media/audio8.21e73b2b.mp3": "/Drum-Machine/static/media/audio8.21e73b2b.mp3",
+    "static/media/audio9.7c4e9574.mp3": "/Drum-Machine/static/media/audio9.7c4e9574.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.f59d0656.js",
     "static/css/2.658248ec.chunk.css",
     "static/js/2.f34f5d36.chunk.js",
     "static/css/main.1fdb862a.chunk.css",
-    "static/js/main.a1e60e5c.chunk.js"
+    "static/js/main.7193943d.chunk.js"
   ]
 }
