@@ -1,45 +1,45 @@
-import React,{ Fragment } from 'react';
+import React,{ useState, Fragment } from 'react';
 import './style2.css'
-import { useState } from 'react'
+import sonidos from './song/audio.mp3'
 
-export default function Buttons({ name, sonido, onName, volumen, interruptor }){
-   
+const Buttons = ({ name, sonido, onName, interruptor }) => {
+    
     // pass the event to the handler
-    const handlePlay = e =>{
+    const handlePlay = (audio) => {
+        onName(audio.id);
+        console.log(audio.querySelector('audio'))
         if(interruptor){
-        // get all audio elements and stop them all
-        const allAudios = document.querySelectorAll('audio');
-        allAudios.forEach(audioEl => {
-            audioEl.pause()
-            audioEl.currentTime=0;
-            
-        })
+            // get all audio elements and stop them all
+            const allAudios = document.querySelectorAll('audio');
+            allAudios.forEach(audioEl => {
+                audioEl.pause()
+                audioEl.currentTime=0;
+                
+            })
 
-        // get the clicked audio element and play
-        const thisAudio = e.target.querySelector('audio');
-        thisAudio.play()
+            // get the clicked audio element and play
+            audio.querySelector('audio').play();
 
-        // get all audio elements and add volumen
-        const temas = document.querySelectorAll('audio');
-        temas.forEach(tema => {
-            tema.volumen = 0.1;
-        })
-        
-        
-        onName(e.target.id)}
+            // get all audio elements and add volumen
+            const temas = document.querySelectorAll('audio');
+            temas.forEach(tema => {
+                tema.volumen = 0.1;
+            })
+        }
+
         else{
             const allAudios = document.querySelectorAll('audio');
         allAudios.forEach(audioEl => {
             audioEl.pause()
             audioEl.currentTime=0;
             
-            console.log(audioEl.volumen)
         })
         }
         
     }
     
-    const handlePress = (e) =>{
+    window.onkeydown = (e) =>{
+        
         const allAudios = document.querySelectorAll('audio');
         allAudios.forEach(audioEl => {
             audioEl.pause()
@@ -48,56 +48,59 @@ export default function Buttons({ name, sonido, onName, volumen, interruptor }){
         })
         switch (e.key) {
             case 'q':
-                const audio = document.getElementById('Q');
-                audio.play()
+                const audioQ = document.querySelector('.Q');
+                handlePlay(audioQ)
                 break;
             case 'w':
-                const audio2 = document.getElementById('W');
-                audio2.play()
+                const audioW = document.querySelector('.W');
+                handlePlay(audioW)
                 break;
             case 'e':
-                const audio3 = document.getElementById('E');
-                audio3.play()
+                const audioE = document.querySelector('.E');
+                handlePlay(audioE)
                 break;
             case 'a':
-                const audio4 = document.getElementById('A');
-                audio4.play()
+                const audioA = document.querySelector('.A');
+                handlePlay(audioA)
                 break;
             case 's':
-                const audio5 = document.getElementById('S');
-                audio5.play()
+                const audioS = document.querySelector('.S');
+                handlePlay(audioS)
                 break;
             case 'd':
-                const audio6 = document.getElementById('D');
-                audio6.play()
+                const audioD = document.querySelector('.D');
+                handlePlay(audioD)               
                 break;
             case 'z':
-                const audio7 = document.getElementById('Z');
-                audio7.play()
+                const audioZ = document.querySelector('.Z');
+                handlePlay(audioZ)
                 break;
             case 'x':
-                const audio8 = document.getElementById('X');
-                audio8.play()
+                const audioX = document.querySelector('.X');
+                handlePlay(audioX)
                 break;
             case 'c':
-                const audio9 = document.getElementById('C');
-                audio9.play()
+                const audioC = document.querySelector('.C');
+                handlePlay(audioC)
                 break;
         
             default:
                 break;
         }
     }
+    
 
 
     return (
         <Fragment >
             <button 
-                className='drum-pad w-100 h-100 btn-lg' 
-                onClick={handlePlay} onKeyDown={handlePress}
+                id={name}
+                className={`drum-pad w-100 h-100 btn-lg ${name}`} 
+                onClick={(e) => handlePlay(e.target)} 
             >{name}
-                <audio src={sonido} id={name}/>
+                <audio className={`clip ${name}`} src={sonido} id={name} />
             </button>
         </Fragment>
     )
 }
+export default Buttons

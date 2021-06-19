@@ -1,17 +1,9 @@
-import audio from './audio.mp3';
-import audio2 from './audio2.mp3';
-import audio3 from './audio3.mp3';
-import audio4 from './audio4.mp3';
-import audio5 from './audio5.mp3';
-import audio6 from './audio6.mp3';
-import audio7 from './audio7.mp3';
-import audio8 from './audio8.mp3';
-import audio9 from './audio9.mp3';
 import React,{ useState } from 'react';
 import Buttons from './Buttons'
 import './style.css'
+import Song from './song/Song'
 
-export default function DrumMachine(){
+const DrumMachine = () => {
    const [name, setName] = useState('');
    const [volumen, setVolumen] = useState('');
    const [nameVolumen, setNameVolumen] = useState('');
@@ -30,6 +22,8 @@ export default function DrumMachine(){
         setNameVolumen(e.target.value)
         
     }
+
+    
     
     return(
         <div id="drum-machine" className='d-flex'>
@@ -38,31 +32,31 @@ export default function DrumMachine(){
                     <div className='container h-100 p-0'>
                         <div className='row h-100 w-100 m-0 p-2'>
                             <div className="col-4 p-0 " >
-                                <Buttons interruptor={interruptor} sonido={audio} name={'Q'} onName={handleName} volumen={volumen}/>
+                                <Buttons interruptor={interruptor} sonido={Song.Q} name={'Q'} onName={handleName} volumen={volumen}/>
                             </div>
                             <div className="col-4 p-0">
-                                <Buttons interruptor={interruptor} sonido={audio2} name={'W'}onName={handleName} volumen={volumen}/> 
+                                <Buttons interruptor={interruptor} sonido={Song.W} name={'W'} onName={handleName} volumen={volumen}/> 
                             </div>
                             <div className="col-4 p-0">
-                                <Buttons interruptor={interruptor} sonido={audio3} name={'E'}onName={handleName} volumen={volumen}/>  
+                                <Buttons interruptor={interruptor} sonido={Song.E} name={'E'} onName={handleName} volumen={volumen}/>  
                             </div>
                             <div className="col-4 p-0">
-                                <Buttons interruptor={interruptor} sonido={audio4} name={'A'}onName={handleName} volumen={volumen}/>
+                                <Buttons interruptor={interruptor} sonido={Song.A} name={'A'} onName={handleName} volumen={volumen}/>
                             </div>
                             <div className="col-4 p-0">
-                                <Buttons interruptor={interruptor} sonido={audio5} name={'S'}onName={handleName} volumen={volumen}/> 
+                                <Buttons interruptor={interruptor} sonido={Song.S} name={'S'} onName={handleName} volumen={volumen}/> 
                             </div>
                             <div className="col-4 p-0">
-                                <Buttons interruptor={interruptor} sonido={audio6} name={'D'}onName={handleName} volumen={volumen}/> 
+                                <Buttons interruptor={interruptor} sonido={Song.D} name={'D'} onName={handleName} volumen={volumen}/> 
                             </div>
                             <div className="col-4 p-0">
-                                <Buttons interruptor={interruptor} sonido={audio7} name={'Z'}onName={handleName} volumen={volumen}/>
+                                <Buttons interruptor={interruptor} sonido={Song.Z} name={'Z'} onName={handleName} volumen={volumen}/>
                             </div>
                             <div className="col-4 p-0">
-                                <Buttons interruptor={interruptor} sonido={audio8} name={'X'}onName={handleName} volumen={volumen}/> 
+                                <Buttons interruptor={interruptor} sonido={Song.X} name={'X'} onName={handleName} volumen={volumen}/> 
                             </div>
                             <div className="col-4 m-0 p-0">
-                                <Buttons interruptor={interruptor} sonido={audio9} name={'C'}onName={handleName} volumen={volumen}/>
+                                <Buttons interruptor={interruptor} sonido={Song.C} name={'C'} onName={handleName} volumen={volumen}/>
                             </div>
                         </div>
                     </div>
@@ -91,3 +85,4 @@ export default function DrumMachine(){
         </div>
     )
 }
+export default DrumMachine;
